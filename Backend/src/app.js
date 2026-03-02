@@ -1,11 +1,9 @@
 const express = require("express")
-const banking = require("./model/model")
+const routes = require("./routes/routes")
 const app = express()
 
-app.get("/",(req,res)=>{
-    res.send("hello world")
-})
+app.use(express.json())
 
-
+app.use('/', routes)
 
 module.exports = app
